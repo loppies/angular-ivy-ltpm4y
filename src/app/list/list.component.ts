@@ -29,7 +29,7 @@ export class ListComponent implements OnInit {
     a.innerHTML = 'delete';
     a.setAttribute('href', '#');
     a.setAttribute('id', this.ids.toString());
-    a.setAttribute('onclick', 'this.deletePerson()');
+    a.setAttribute('click', 'this.deletePerson()');
     li.appendChild(a);
     el.appendChild(li);
     this.ids++;
