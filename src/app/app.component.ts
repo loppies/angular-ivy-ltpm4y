@@ -11,11 +11,20 @@ export class AppComponent implements OnInit {
   ran1 = 'Random Component max = 100';
   cos = new RandomService();
   ran11 = this.cos.getRandomInt(100);
-  
+  ran2 = 'Random Component max 10';
+  ran22 = this.cos.getRandomInt(10);
+
+  getRandom() {
+    this.ran11 = this.cos.getRandomInt(100);
+    let el = document.getElementById("half");
+    console.log(el.innerHTML);
+  }
+
+  getRandom1() {
+    this.ran22 = this.cos.getRandomInt(10);
+  }
+
   ngOnInit(): void {}
 
-  constructor(private myService: RandomService) {    
-  
-  }
-  
+  constructor(private myService: RandomService) {}
 }

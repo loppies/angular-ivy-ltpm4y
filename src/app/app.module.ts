@@ -7,9 +7,10 @@ import { HelloComponent } from './hello.component';
 import { RandomComponent } from './random/random.component';
 import { ListComponent } from './list/list.component';
 import { RandomService } from './random/random.service';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, CommonModule],
   declarations: [
     AppComponent,
     HelloComponent,
