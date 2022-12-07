@@ -13,8 +13,8 @@ export class ListComponent implements OnInit {
 
   ngOnInit() {}
 
-  deletePerson() {
-    console.log('elo');
+  deletePerson(el, li) {
+    el.removeChild(li);
   }
 
   addPerson(newPerson: string) {
@@ -23,16 +23,15 @@ export class ListComponent implements OnInit {
     }
     let el = document.getElementById('lista');
     let li = document.createElement('li');
-    li.setAttribute('id', 'li' + this.ids.toString());
     li.innerHTML = this.people[this.ids] + '  ';
     let a = document.createElement('a');
     a.innerHTML = 'delete';
     a.setAttribute('href', '#');
-    a.setAttribute('id', this.ids.toString());
-    a.setAttribute('click', 'this.deletePerson()');
+    a.addEventListener('click', this.deletePerson.bind(null, el, li));
     li.appendChild(a);
     el.appendChild(li);
     this.ids++;
-    console.log(li.id);
+    let n = document.getElementById('nowy');
+    console.log(n);
   }
 }
