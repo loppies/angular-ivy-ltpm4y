@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list.component.css'],
 })
 export class ListComponent implements OnInit {
+  name = '';
   ids = 0;
   constructor() {}
 
@@ -17,9 +18,9 @@ export class ListComponent implements OnInit {
     el.removeChild(li);
   }
 
-  addPerson(newPerson: string) {
-    if (newPerson) {
-      this.people.push(newPerson);
+  addPerson(newPersonn: string) {
+    if (newPersonn) {
+      this.people.push(newPersonn);
     }
     let el = document.getElementById('lista');
     let li = document.createElement('li');
@@ -33,5 +34,6 @@ export class ListComponent implements OnInit {
     this.ids++;
     let n = document.getElementById('nowy');
     console.log(n);
+    this.name = '';
   }
 }

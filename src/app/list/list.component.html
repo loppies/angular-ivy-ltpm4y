@@ -1,5 +1,5 @@
 <p>List Component</p>
-<input #newPerson />
+<input [(ngModel)]="name" #newPerson />
 
 <button type="button" (click)="addPerson(newPerson.value)">Add</button>
 
